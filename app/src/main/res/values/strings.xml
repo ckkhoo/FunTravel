@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">Local Guide</string>
+    <string name="main_unlock">Unlock the best of FunTravel</string>
+    <string name="main_connect">Connect with locals and become part of the community now.</string>
+    <string name="register">Register</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    <string name="login_welcome">Welcome back, login</string>
+    <string name="login_switch">Don\'t have an account?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot">Forgot your password?</string>
+    <string name="signup_welcome">Sign up for free</string>
+    <string name="signup_switch">Already have an account?</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="join">Join</string>
+</resources>
