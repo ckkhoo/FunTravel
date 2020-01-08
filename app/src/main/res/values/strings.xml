@@ -15,4 +15,17 @@
     <string name="signup_switch">Already have an account?</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="join">Join</string>
+    <string name="about">About</string>
+    <string name="about_malaysia">
+        Malaysia is a multi–ethnic, multicultural, and multilingual society,
+        and the many ethnic groups in Malaysia maintain separate cultural identities.
+        The society of Malaysia has been described as \"Asia in miniature\".
+    </string>
+    <string name="language_title">Language(s)</string>
+    <string name="language">English, Malay, Chinese, Tamil</string>
+    <string name="ethnicity_title">Ethnicity</string>
+    <string name="ethnicity">Malay 50.4%, Chinese 23.7%, indigenous 11%, Indian 7.1%, others 7.8%</string>
+    <string name="malaysia">Malaysia</string>
+    <string name="religion_title">Religion(s)</string>
+    <string name="religion">Muslim 60.4%, Buddhist 19.2%, Christian 9.1%, Hindu 6.3%, Confucianism, Taoism, other traditional Chinese religions 2.6%, other or unknown 1.5%, none 0.8%</string>
 </resources>
