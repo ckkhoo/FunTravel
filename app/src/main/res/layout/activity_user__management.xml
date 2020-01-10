@@ -23,7 +23,7 @@
         android:id="@+id/buttonCancel"
         android:layout_width="120dp"
         android:layout_height="60dp"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/btn_border"
@@ -32,7 +32,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.85" />
 
     <Button
         android:id="@+id/buttonSave"
@@ -40,7 +40,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="28dp"
 
         android:background="@color/colorPrimary"
