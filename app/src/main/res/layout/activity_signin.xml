@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewLoginWelcome" />
 
     <Button
-        android:id="@+id/buttonJoin"
+        android:id="@+id/buttonSignIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -107,10 +107,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:clickable="true"
         android:text="@string/forgot"
         android:textColor="@color/colorSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonJoin" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
