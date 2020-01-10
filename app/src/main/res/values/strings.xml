@@ -28,4 +28,15 @@
     <string name="malaysia">Malaysia</string>
     <string name="religion_title">Religion(s)</string>
     <string name="religion">Muslim 60.4%, Buddhist 19.2%, Christian 9.1%, Hindu 6.3%, Confucianism, Taoism, other traditional Chinese religions 2.6%, other or unknown 1.5%, none 0.8%</string>
+    <string name="name">Name</string>
+    <string name="editName">Edit Name</string>
+    <string name="editEmail">Edit Email</string>
+    <string name="savebtn">Save</string>
+    <string name="cancelbtn">Cancel</string>
+    <string name="editprofile">Edit Profile</string>
+    <string name="favaourite">Favourite</string>
+    <string name="setting">Setting</string>
+    <string name="signout">Sign Out</string>
+    `
+
 </resources>
