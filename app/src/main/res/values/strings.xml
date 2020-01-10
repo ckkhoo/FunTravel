@@ -9,12 +9,21 @@
     <string name="login_welcome">Welcome back, login</string>
     <string name="login_switch">Don\'t have an account?</string>
     <string name="email">Email</string>
+    <string name="name">Name</string>
     <string name="password">Password</string>
     <string name="forgot">Forgot your password?</string>
     <string name="signup_welcome">Sign up for free</string>
     <string name="signup_switch">Already have an account?</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="join">Join</string>
+    <string name="title_resend_password">Recovering account by email</string>
+    <string name="resend_password">Forgot password ?</string>
+    <string name="enter_email">Please enter your email</string>
+    <string name="send">Send</string>
+    <string name="role_selection">Travel or Guide? Please select : </string>
+    <string name="traveler">Traveler</string>
+    <string name="guide">Guide</string>
+
     <string name="about">About</string>
     <string name="about_malaysia">
         Malaysia is a multi–ethnic, multicultural, and multilingual society,
