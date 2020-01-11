@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.TextView
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.Response
@@ -72,7 +71,7 @@ class CountryDetails : AppCompatActivity() {
                         }
                     }
                 } catch (e: Exception) {
-                    Log.d("Main", "Response: %s".format(e.message.toString()))
+                    Log.d("Volley", "Response: %s".format(e.message.toString()))
                 }
             },
             Response.ErrorListener { error ->

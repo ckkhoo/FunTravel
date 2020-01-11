@@ -2,9 +2,7 @@ package com.example.localguide
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import com.example.localguide.Model.User
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_display_user_profile.*
 

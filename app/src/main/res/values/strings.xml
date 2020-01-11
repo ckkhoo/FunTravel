@@ -41,8 +41,6 @@
     <string name="resend_password">Resend Password</string>
     <string name="enter_email">Enter Email</string>
     <string name="title_resend_password">Recovering account by email</string>
-
-
-    `
-
+    <string name="url_server">https://funtravel123.000webhostapp.com/</string>
+    <string name="url_read_one_country">api/country/read_one.php</string>
 </resources>
