@@ -37,6 +37,12 @@
     <string name="favaourite">Favourite</string>
     <string name="setting">Setting</string>
     <string name="signout">Sign Out</string>
+    <string name="send">Send</string>
+    <string name="resend_password">Resend Password</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="title_resend_password">Recovering account by email</string>
+
+
     `
 
 </resources>

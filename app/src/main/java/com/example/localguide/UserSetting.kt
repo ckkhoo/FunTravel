@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.localguide.Model.User
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -25,13 +26,20 @@ class UserSetting : AppCompatActivity() {
             startActivity(Intent(this@UserSetting, User_Management::class.java))
         }
         lateinit var sDatabase: DatabaseReference
+        lateinit var userDatabase: DatabaseReference
+
         sDatabase = FirebaseDatabase.getInstance().getReference("Countries")
+
+
 
         sDatabase.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 val imgUrl = dataSnapshot.child("Malaysia/imageCountry").value.toString()
-                textViewName.text = imgUrl
+                val userName = dataSnapshot.child("User").getValue().toString()
+                val email = dataSnapshot.child("User/name").value.toString()
+                textViewName.text = userName
+                textViewEmail.text=email
                 putImage(imgUrl, imageViewUser)
             }
 
