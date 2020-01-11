@@ -19,6 +19,10 @@ class CountryDetails : AppCompatActivity() {
         setContentView(R.layout.activity_country_details)
 
         getOneCountry("9")
+
+        imageViewEdit.setOnClickListener {
+
+        }
     }
 
     private fun getOneCountry(country_id: String) {
@@ -90,3 +94,5 @@ class CountryDetails : AppCompatActivity() {
         WebhostSingleton.getInstace(this).addToRequestQueue(jsonObjectRequest)
     }
 }
+
+

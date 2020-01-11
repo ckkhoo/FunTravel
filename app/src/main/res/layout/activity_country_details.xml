@@ -15,11 +15,10 @@
 
         <ImageView
             android:id="@+id/imageViewCountry"
-            android:layout_width="0dp"
-            android:layout_height="280sp"
+            android:layout_width="450sp"
+            android:layout_height="280dp"
             android:cropToPadding="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/malaysia_klcc" />
@@ -196,6 +195,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewEtiquetteTitle" />
+
+        <ImageView
+            android:id="@+id/imageViewEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCountry"
+            app:layout_constraintStart_toEndOf="@+id/textViewCountry"
+            app:layout_constraintTop_toTopOf="@+id/textViewCountry"
+            app:srcCompat="@drawable/ic_edit_black_24dp" />
+
+        <ImageView
+            android:id="@+id/imageViewFavouriteLove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_favorite_black_48dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
