@@ -1,10 +1,10 @@
 package com.example.localguide
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.android.volley.DefaultRetryPolicy
@@ -12,8 +12,8 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_country_details.*
-import kotlinx.android.synthetic.main.fragment_edit_country.*
 import org.json.JSONObject
+
 
 class CountryDetails : AppCompatActivity() {
     lateinit var country: Country
@@ -25,7 +25,9 @@ class CountryDetails : AppCompatActivity() {
         setContentView(R.layout.activity_country_details)
 
         //Intent
-        getOneCountry("Malaysia")
+        val intent = getIntent()
+        val passedName = intent.getStringExtra("name")
+        getOneCountry(passedName)
 
         //LiveData View Model
         countryViewModel = ViewModelProviders.of(this).get(CountryViewModel:: class.java)
