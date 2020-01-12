@@ -24,7 +24,7 @@ class CountryDetails : AppCompatActivity() {
         setContentView(R.layout.activity_country_details)
 
         //Intent
-        getOneCountry("Singapore")
+        getOneCountry("Malaysia")
 
         //LiveData View Model
         countryViewModel = ViewModelProviders.of(this).get(CountryViewModel:: class.java)
@@ -68,6 +68,7 @@ class CountryDetails : AppCompatActivity() {
                         )
 
                         setCountryText(country)
+                        countryViewModel.countryLive.value = country
                         makeVisible()
                     }
                 } catch (e: Exception) {
@@ -132,15 +133,6 @@ class CountryDetails : AppCompatActivity() {
         textViewEtiquette.text = country.etiquette
         textViewLanguage.text = country.language
         textViewReligion.text = country.religion
-    }
-
-    private fun setFragmentText() {
-        editTextCountryName.setText(country.name)
-        editTextAbout.setText(country.description)
-        editTextEthnicity.setText(country.ethnicity)
-        editTextEtiquette.setText(country.etiquette)
-        editTextLanguage.setText(country.language)
-        editTextReligion.setText(country.religion)
     }
 }
 
