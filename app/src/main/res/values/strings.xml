@@ -23,6 +23,12 @@
     </string>
     <string name="language_title">Language(s)</string>
     <string name="language">English, Malay, Chinese, Tamil</string>
+    <string name="etiquette_title">Etiquette</string>
+    <string name="etiquette">Greetings in a social context will depend upon the ethnicity of the person you are meeting. In general, most Malays are aware of Western ways so the handshake is normal. There may be slight differences though and a few things to bear in mind include:
+        \nMalay women may not shake hands with men. Women can of course shake hands with women. Men may also not shake hands with women and may bow instead while placing their hand on their heart.
+        \nThe Chinese handshake is light and may be rather prolonged. Men and women may shake hands, although the woman must extend her hand first. Many older Chinese lower their eyes during the greeting as a sign of respect.
+        \nIndians shake hands with members of the same sex. When being introduced to someone of the opposite sex, nodding the head and smiling is usually sufficient.
+    </string>
     <string name="ethnicity_title">Ethnicity</string>
     <string name="ethnicity">Malay 50.4%, Chinese 23.7%, indigenous 11%, Indian 7.1%, others 7.8%</string>
     <string name="malaysia">Malaysia</string>
