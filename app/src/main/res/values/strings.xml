@@ -9,12 +9,26 @@
     <string name="login_welcome">Welcome back, login</string>
     <string name="login_switch">Don\'t have an account?</string>
     <string name="email">Email</string>
+    <string name="name">Name</string>
     <string name="password">Password</string>
     <string name="forgot">Forgot your password?</string>
     <string name="signup_welcome">Sign up for free</string>
     <string name="signup_switch">Already have an account?</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="join">Join</string>
+    <string name="title_resend_password">Recovering account by email</string>
+    <string name="resend_password">Forgot password ?</string>
+    <string name="enter_email">Please enter your email</string>
+    <string name="send">Send</string>
+    <string name="role_selection">Travel or Guide? Please select : </string>
+    <string name="traveler">Traveler</string>
+    <string name="signup_guide">Sign up as Guide</string>
+    <string name="guide">Guide</string>
+    <string name="pref_file_name">com.example.localguide</string>
+    <string name="userID">UserID</string>
+    <string name="default_UserID">No UserID</string>
+
+
     <string name="about">About</string>
     <string name="about_malaysia">
         Malaysia is a multi–ethnic, multicultural, and multilingual society,
@@ -34,7 +48,6 @@
     <string name="malaysia">Malaysia</string>
     <string name="religion_title">Religion(s)</string>
     <string name="religion">Muslim 60.4%, Buddhist 19.2%, Christian 9.1%, Hindu 6.3%, Confucianism, Taoism, other traditional Chinese religions 2.6%, other or unknown 1.5%, none 0.8%</string>
-    <string name="name">Name</string>
     <string name="editName">Edit Name</string>
     <string name="editEmail">Edit Email</string>
     <string name="savebtn">Save</string>
@@ -43,12 +56,17 @@
     <string name="favaourite">Favourite</string>
     <string name="setting">Setting</string>
     <string name="signout">Sign Out</string>
-    <string name="send">Send</string>
-    <string name="resend_password">Resend Password</string>
-    <string name="enter_email">Enter Email</string>
-    <string name="title_resend_password">Recovering account by email</string>
     <string name="url_server">https://funtravel123.000webhostapp.com/</string>
     <string name="url_read_one_country">api/country/read_one.php</string>
     <string name="url_read_all_country">api/country/read.php</string>
-    <string name="confirm">Confirm</string>
+
+
+    <string name="stringEmail">Please enter your new email</string>
+    <string name="stringPassword">To save this setting, please enter your FunTravel password.</string>
+    <string name="stringChangePassword">Your password should be at least 6 characters above and contain number, lower and upper character, and special character.</string>
+    <string name="buttonDone">Done</string>
+    <string name="buttonConfirm">Confirm</string>
+    <string name="buttonCancel">Cancel</string>
+    <string name="newPassoword">New Password</string>
+    <string name="confirmPassoword">Confirm Password</string>
 </resources>

@@ -4,4 +4,7 @@
     <color name="colorSecondary">#61d3e0</color>
     <color name="colorPrimaryDark">#61d3e0</color>
     <color name="colorAccent">#61d3e0</color>
+    <color name="colorBackground">#EDE7F6</color>
+    <color name="colorContent">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

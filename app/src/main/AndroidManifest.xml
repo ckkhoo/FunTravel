@@ -13,16 +13,18 @@
         android:theme="@style/AppTheme">
         <activity android:name=".UserSetting"    android:exported="true"></activity>
         <activity android:name=".User_Management" />
-        <activity
-            android:name=".homepage"
-          />
-        <activity android:name=".CountryDetails">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".homepage" />
+        <activity android:name=".CountryDetails"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterGuideActivity"></activity>
+        <activity android:name=".TravelerGuideActivity"></activity>
+        <activity android:name=".DisplayUserProfile"></activity>
+        <activity android:name=".SigninActivity"></activity>
+        <activity android:name=".UserForgotPasswordActivity"></activity>
+        <activity android:name=".ChangePasswordActivity"></activity>
+        <activity android:name=".LanguageActivity"></activity>
+        <activity android:name=".SettingActivity" android:label="Setting"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

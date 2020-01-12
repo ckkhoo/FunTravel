@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonRegister.setOnClickListener {
-            goToRegisterActivity()
+            goToTravelerGuideActicity()
         }
 
         buttonSignIn.setOnClickListener {
@@ -20,13 +20,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun goToRegisterActivity() {
-        val intentRegisterActivity = Intent(this, RegisterActivity::class.java)
-        startActivity(intentRegisterActivity)
-    }
 
     fun goToSignInActivity() {
         val intentSigninActivity = Intent(this, SigninActivity::class.java)
         startActivity(intentSigninActivity)
+    }
+
+    fun goToTravelerGuideActicity() {
+        val intent = Intent(this, TravelerGuideActivity::class.java)
+        startActivity(intent)
     }
 }

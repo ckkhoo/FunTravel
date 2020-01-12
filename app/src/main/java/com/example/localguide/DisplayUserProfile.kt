@@ -1,5 +1,7 @@
 package com.example.localguide
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -10,10 +12,14 @@ import kotlinx.android.synthetic.main.activity_display_user_profile.*
 class DisplayUserProfile : AppCompatActivity() {
 
     private lateinit var databaseRef: DatabaseReference
+    private lateinit var sharedPreferencesUID : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_user_profile)
+
+        sharedPreferencesUID = getSharedPreferences(getString(R.string.pref_file_name), Context.MODE_PRIVATE)
+        val userID = sharedPreferencesUID.getString(getString(R.string.userID), getString(R.string.default_UserID))?:return
 
         databaseRef = FirebaseDatabase.getInstance().getReference("User")
 
@@ -22,13 +28,12 @@ class DisplayUserProfile : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 if(dataSnapshot?.exists()) {
-                    val uid = intent.getStringExtra(SigninActivity.EXTRA_UID)
                     //val user = dataSnapshot.child(uid).getValue()
-                    //textViewUserName.text = user?.name
+                    //textViewUserName.text = sharedPreferencesUID.getString("userID", "")
                     for(u: DataSnapshot in dataSnapshot.children.iterator()) {
-                        if(u.key!!.equals(uid)) {
+                        if(u.key!!.equals(userID)) {
                             textViewUserName.text = String.format("Name  : %s",  u.child("name").getValue())
-                            break
+                            return
                         }
                     }
                 }
