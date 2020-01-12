@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">当地向导</string>
+    <string name="main_unlock">解锁FunTravel的精华</string>
+    <string name="main_connect">与当地人联系并成为社区的一部分.</string>
+    <string name="register">注册</string>
+    <string name="signin">登入</string>
+    <string name="signup">注册</string>
+    <string name="login_welcome">欢迎回来，登入</string>
+    <string name="login_switch">还没有帐号？</string>
+    <string name="email">电子邮件</string>
+    <string name="name">名字</string>
+    <string name="password">密码</string>
+    <string name="forgot">忘记密码?</string>
+    <string name="signup_welcome">免费注册</string>
+    <string name="signup_switch">已经有帐号了？</string>
+    <string name="confirm">确认</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="join">加入</string>
+    <string name="title_resend_password">通过电子邮件恢复帐户</string>
+    <string name="resend_password"> 忘记密码 ?</string>
+    <string name="enter_email">请输入您的电子邮件</string>
+    <string name="send">发送</string>
+    <string name="role_selection">旅行还是向导？请选择 ：</string>
+    <string name="traveler">旅客</string>
+    <string name="signup_guide">注册为向导</string>
+    <string name="guide">向导</string>
+    <string name="pref_file_name">com.example.localguide</string>
+        <string name="userID">用户</string>
+    <string name="default_UserID">没有用户</string>
+
+
+    <string name="about">关于</string>
+    <string name="about_malaysia">
+        马来西亚是一个多民族，多元文化和多语言的社会，
+        马来西亚的许多种族保持着不同的文化身份。
+        马来西亚社会被描述为“微型亚洲”。
+    </string>
+    <string name="language_title">语言(s)</string>
+    <string name="language">英文，马来文，中文，泰米尔文</string>
+    <string name="etiquette_title">礼仪</string>
+    <string name="etiquette">在社交环境中打招呼将取决于您遇到的人的种族。一般来说，大多数马来人都知道西方的方式，因此握手是正常的。但是可能会有细微的差异，并且需要牢记一些注意事项：
+        \ n马来西亚女性可能不会与男性握手。女人当然可以与女人握手。男人可能也不会与女人握手，而是可能会在将手放在心上时低头。
+        \ n中国的握手很轻松，可能会延长很长时间。男人和女人可以握手，尽管女人必须先伸出手。在问候语中，许多年长的中国人低下眼睛表示尊重。
+        \ n印地安人与同性成员握手。当被介绍给异性时，点头微笑就足够了。
+    </string>
+    <string name="ethnicity_title">种族</string>
+    <string name="ethnicity">马来人 50.4%, 华人 23.7%, 原住民 11%, 印度人 7.1%, 其他 7.8%</string>
+    <string name="malaysia">马来西亚</string>
+    <string name="religion_title">宗教(s)</string>
+    <string name="religion">穆斯林60.4％，佛教19.2％，基督教9.1％，印度教6.3％，儒教，道教，其他中国传统宗教2.6％，其他或未知1.5％，无0.8％</string>
+    <string name="editName">编辑名称</string>
+    <string name="editEmail">编辑电子邮件</string>
+    <string name="savebtn">保存</string>
+    <string name="cancelbtn">取消</string>
+    <string name="editprofile">编辑个人资料</string>
+    <string name="favaourite">喜爱</string>
+    <string name="setting">设定</string>
+    <string name="signout">登出</string>
+    <string name="url_server">https://funtravel123.000webhostapp.com/</string>
+    <string name="url_read_one_country">api/country/read_one.php</string>
+    <string name="url_read_all_country">api/country/read.php</string>
+    <string name="url_update_country">api/country/update.php</string>
+
+
+    <string name="stringEmail">请输入您的新电子邮件</string>
+    <string name="stringPassword">要保存此设置，请输入您的FunTravel密码。</string>
+    <string name="stringChangePassword">您的密码至少应包含6个字符，并包含数字，大写和小写字母以及特殊字符。</string>
+    <string name="buttonDone">完成</string>
+    <string name="buttonConfirm">确认</string>
+    <string name="buttonCancel">取消</string>
+    <string name="newPassoword">新密码</string>
+    <string name="confirmPassoword">确认密码</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

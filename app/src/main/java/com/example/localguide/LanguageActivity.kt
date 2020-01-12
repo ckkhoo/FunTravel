@@ -1,28 +1,75 @@
 package com.example.localguide
 
+import android.app.Activity
+import android.content.Context
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.localguide.Model.Language
+import android.widget.Button
+import androidx.appcompat.app.AlertDialog
+import java.util.*
 
 class LanguageActivity : AppCompatActivity() {
 
-    val arrayLanguage: ArrayList<Language> = ArrayList()
-
+    lateinit var mBtn : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        loadLocate()
         setContentView(R.layout.activity_language)
 
-        val recycleView = findViewById<RecyclerView>(R.id.recycleViewLanguage)
-        val adapter = LanguageListAdapter(this, arrayLanguage)
 
-        arrayLanguage.add(Language("English (United Kingdom)"))
-        arrayLanguage.add(Language("简体中文"))
+        val actionBar = supportActionBar
+        actionBar!!.title=resources.getString(R.string.app_name)
 
-        recycleView.adapter = adapter
-        recycleView.layoutManager = LinearLayoutManager(this)
+        mBtn= findViewById(R.id.mChangeLang)
+        mBtn.setOnClickListener {
 
-        adapter.setLanguages(arrayLanguage)
+            showChangeLang()
+        }
+    }
+    private fun showChangeLang() {
+        val listItmes = arrayOf("Chinese","Malay","English")
+
+        val mBuilder = AlertDialog.Builder(this@LanguageActivity)
+        mBuilder.setTitle("Choose Language")
+        mBuilder.setSingleChoiceItems(listItmes, -1)  { dialog, which->
+            if(which==0){
+                setLocate("ms")
+                recreate()
+            }
+            else if(which==1){
+                setLocate("zh")
+                recreate()
+            }
+            else if ( which == 2){
+                setLocate("en")
+                recreate()
+            }
+            dialog.dismiss()
+        }
+        val mDialog = mBuilder.create()
+        mDialog.show()
+
+    }
+    private fun setLocate(Lang : String){
+        val locale = Locale(Lang)
+
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.locale=locale
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+
+        val editor = getSharedPreferences("Setting", Context.MODE_PRIVATE).edit()
+        editor.putString("My_Lang", Lang)
+        editor.apply()
+
+    }
+
+    private fun loadLocate(){
+        val sharedPreferences = getSharedPreferences ( "Setting", Activity.MODE_PRIVATE)
+        val language= sharedPreferences.getString("My_Lang","")
+        if (language != null) {
+            setLocate(language)
+        }
     }
 }
