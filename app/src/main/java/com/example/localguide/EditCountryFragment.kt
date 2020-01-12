@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.fragment_edit_country.*
@@ -42,7 +40,16 @@ class EditCountryFragment : Fragment() {
         setFragmentText(countryViewModel.countryLive.value!!)
 
         buttonConfirmEditCountry.setOnClickListener {
+            var newCountry = Country(
+                editTextCountryName.text.toString(),
+                editTextAbout.text.toString(),
+                editTextEthnicity.text.toString(),
+                editTextEtiquette.text.toString(),
+                editTextLanguage.text.toString(),
+                editTextReligion.text.toString())
 
+            countryViewModel.countryLive.value = newCountry
+            activity!!.supportFragmentManager.beginTransaction().remove(this).commit()
         }
 
         buttonCancelEditCountry.setOnClickListener {

@@ -59,6 +59,8 @@
     <string name="url_server">https://funtravel123.000webhostapp.com/</string>
     <string name="url_read_one_country">api/country/read_one.php</string>
     <string name="url_read_all_country">api/country/read.php</string>
+    <string name="url_update_country">api/country/update.php</string>
+    <string name="confirm">Confirm</string>
 
 
     <string name="stringEmail">Please enter your new email</string>

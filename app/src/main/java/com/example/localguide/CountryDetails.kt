@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.android.volley.DefaultRetryPolicy
@@ -28,14 +29,16 @@ class CountryDetails : AppCompatActivity() {
 
         //LiveData View Model
         countryViewModel = ViewModelProviders.of(this).get(CountryViewModel:: class.java)
-        val countryObserver = Observer<Country> { newCountry ->
-            setCountryText(newCountry)
-        }
-        countryViewModel.countryLive.observe(this, countryObserver)
 
         //Button listeners
         imageViewEdit.setOnClickListener {
-            makeInvisible()
+            //Fire observer
+            val countryObserver = Observer<Country> { newCountry ->
+                setCountryText(newCountry)
+                setOneCountry(newCountry)
+            }
+            countryViewModel.countryLive.observe(this, countryObserver)
+
             val transaction = manager.beginTransaction()
             val fragment = EditCountryFragment()
             transaction.replace(R.id.country_container, fragment)
@@ -80,6 +83,52 @@ class CountryDetails : AppCompatActivity() {
 
                 textViewCountry.text = "Null"
                 textViewCountry.visibility = View.VISIBLE
+            }
+        )
+
+        //Volley request policy, only one time request
+        jsonObjectRequest.retryPolicy = DefaultRetryPolicy (
+            DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
+            0, //no retry
+            1f
+        )
+
+        //Access the RequestQueue through singleton class
+        WebhostSingleton.getInstace(this).addToRequestQueue(jsonObjectRequest)
+    }
+
+    private fun setOneCountry(country: Country) {
+        val url = getString(R.string.url_server) + getString(R.string.url_update_country) +
+                "?name=" + country.name +
+                "&description=" + country.description +
+                "&ethnicity=" + country.ethnicity +
+                "&etiquette=" + country.etiquette +
+                "&language=" + country.language +
+                "&religion=" + country.religion
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            Response.Listener { response ->
+                //Process the JSON
+                try {
+                    if (response != null) {
+                        val strResponse = response.toString()
+                        val jsonResponse = JSONObject(strResponse)
+
+                        Log.d("Volley", jsonResponse.toString())
+
+                        if (jsonResponse.getString("success").equals("1")) {
+                            Toast.makeText(this, "Country Details Updated", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Failed to Update Country Details", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } catch (e: Exception) {
+                    Log.d("Volley", "Response: %s".format(e.message.toString()))
+                }
+            },
+            Response.ErrorListener { error ->
+                Log.e("Volley", "Response: %s".format(error.message.toString()))
             }
         )
 
