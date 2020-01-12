@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".UserSetting"    android:exported="true"></activity>
         <activity android:name=".User_Management" />
-        <activity android:name=".homepage" />
+
         <activity android:name=".CountryDetails"></activity>
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".RegisterGuideActivity"></activity>
@@ -25,7 +25,7 @@
         <activity android:name=".LanguageActivity"></activity>
         <activity android:name=".SettingActivity" android:label="Setting"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".homepage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

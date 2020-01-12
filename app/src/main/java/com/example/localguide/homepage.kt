@@ -1,6 +1,7 @@
 package com.example.localguide
  
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 
@@ -9,6 +10,7 @@ import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -22,6 +24,20 @@ class homepage : AppCompatActivity() {
 
         countryList = ArrayList<Country>()
         getAllCountry()
+
+        val bottomNavigation : BottomNavigationView = findViewById(R.id.btm_nav)
+        bottomNavigation.setOnNavigationItemSelectedListener {item->
+            when(item.itemId){
+                R.id.home->{
+                    startActivity(Intent(this@homepage, User_Management::class.java))
+                }
+                R.id.profile->{
+                    startActivity(Intent(this@homepage, homepage::class.java))
+                }
+
+            }
+            true
+        }
     }
 
     private fun getAllCountry() {

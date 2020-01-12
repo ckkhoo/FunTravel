@@ -14,6 +14,7 @@
     <string name="forgot">Forgot your password?</string>
     <string name="signup_welcome">Sign up for free</string>
     <string name="signup_switch">Already have an account?</string>
+    <string name="confirm">Confirm</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="join">Join</string>
     <string name="title_resend_password">Recovering account by email</string>
@@ -60,7 +61,6 @@
     <string name="url_read_one_country">api/country/read_one.php</string>
     <string name="url_read_all_country">api/country/read.php</string>
     <string name="url_update_country">api/country/update.php</string>
-    <string name="confirm">Confirm</string>
 
 
     <string name="stringEmail">Please enter your new email</string>
@@ -71,4 +71,7 @@
     <string name="buttonCancel">Cancel</string>
     <string name="newPassoword">New Password</string>
     <string name="confirmPassoword">Confirm Password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

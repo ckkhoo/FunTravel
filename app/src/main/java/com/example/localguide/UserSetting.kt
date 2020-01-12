@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -23,6 +25,20 @@ class UserSetting : AppCompatActivity() {
         val EditProfile = findViewById<TextView>(R.id.textViewEditProfile)
         EditProfile.setOnClickListener {
             startActivity(Intent(this@UserSetting, User_Management::class.java))
+        }
+
+        val bottomNavigation : BottomNavigationView = findViewById(R.id.btm_nav)
+        bottomNavigation.setOnNavigationItemSelectedListener {item->
+            when(item.itemId){
+                R.id.home->{
+                    startActivity(Intent(this@UserSetting, User_Management::class.java))
+                }
+                R.id.profile->{
+                    startActivity(Intent(this@UserSetting, homepage::class.java))
+                }
+
+            }
+            true
         }
         lateinit var sDatabase: DatabaseReference
         lateinit var userDatabase: DatabaseReference
