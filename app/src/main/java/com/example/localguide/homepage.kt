@@ -40,7 +40,6 @@ class homepage : AppCompatActivity() {
                         for(i in 0..size-1){
                             var jsonCountry: JSONObject = jsonArray.getJSONObject(i)
                             var country: Country = Country(
-                                jsonCountry.getString("country_id"),
                                 jsonCountry.getString("name"),
                                 jsonCountry.getString("description"),
                                 jsonCountry.getString("ethnicity"),

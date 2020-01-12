@@ -15,16 +15,6 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageViewCountry"
-            android:layout_width="450sp"
-            android:layout_height="280sp"
-            android:cropToPadding="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/malaysia_klcc" />
-
-        <ImageView
             android:id="@+id/imageViewBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,44 +22,45 @@
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_arrow_back_black_48dp" />
+            app:srcCompat="@drawable/ic_arrow_back_teal_48dp" />
 
         <ImageView
-            android:id="@+id/imageViewFavourite"
+            android:id="@+id/imageViewEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_favorite_border_black_48dp" />
+            app:srcCompat="@drawable/ic_edit_teal_48dp" />
 
         <TextView
             android:id="@+id/textViewCountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="96dp"
             android:text="@string/malaysia"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="30sp"
             android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewCountry"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewAboutTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:text="@string/about"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             android:visibility="invisible"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewCountry" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewCountry" />
 
         <TextView
             android:id="@+id/textViewAbout"
@@ -196,29 +187,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewEtiquetteTitle" />
-
-        <ImageView
-            android:id="@+id/imageViewEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:clickable="true"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewCountry"
-            app:layout_constraintStart_toEndOf="@+id/textViewCountry"
-            app:layout_constraintTop_toTopOf="@+id/textViewCountry"
-            app:srcCompat="@drawable/ic_edit_black_24dp" />
-
-        <ImageView
-            android:id="@+id/imageViewFavouriteLove"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_favorite_black_48dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

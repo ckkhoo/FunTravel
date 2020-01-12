@@ -14,13 +14,13 @@ import org.json.JSONObject
 
 class CountryDetails : AppCompatActivity() {
     lateinit var country: Country
-    val manager = supportFragmentManager
+    private val manager = supportFragmentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_details)
 
-        getOneCountry("9")
+        getOneCountry("Singapore")
 
         imageViewEdit.setOnClickListener {
             makeInvisible()
@@ -29,10 +29,14 @@ class CountryDetails : AppCompatActivity() {
             transaction.replace(R.id.country_container, fragment)
             transaction.commit()
         }
+
+        imageViewBack.setOnClickListener {
+            finish()
+        }
     }
 
-    private fun getOneCountry(country_id: String) {
-        val url = getString(R.string.url_server) + getString(R.string.url_read_one_country) + "?id=" + country_id
+    private fun getOneCountry(country_name: String) {
+        val url = getString(R.string.url_server) + getString(R.string.url_read_one_country) + "?name=" + country_name
 
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
@@ -43,7 +47,6 @@ class CountryDetails : AppCompatActivity() {
                         val strResponse = response.toString()
                         val jsonResponse = JSONObject(strResponse)
                         country = Country(
-                            jsonResponse.getString("country_id"),
                             jsonResponse.getString("name"),
                             jsonResponse.getString("description"),
                             jsonResponse.getString("ethnicity"),
@@ -93,8 +96,6 @@ class CountryDetails : AppCompatActivity() {
         textViewReligion.visibility = View.VISIBLE
         imageViewEdit.visibility = View.VISIBLE
         imageViewBack.visibility = View.VISIBLE
-        imageViewCountry.visibility = View.VISIBLE
-        imageViewFavourite.visibility = View.VISIBLE
     }
 
     private fun makeInvisible() {
@@ -111,8 +112,6 @@ class CountryDetails : AppCompatActivity() {
         textViewReligion.visibility = View.INVISIBLE
         imageViewEdit.visibility = View.INVISIBLE
         imageViewBack.visibility = View.INVISIBLE
-        imageViewCountry.visibility = View.INVISIBLE
-        imageViewFavourite.visibility = View.INVISIBLE
     }
 
     private fun setCountryText() {
