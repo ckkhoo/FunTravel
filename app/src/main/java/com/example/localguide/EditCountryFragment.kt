@@ -41,6 +41,14 @@ class EditCountryFragment : Fragment() {
 
         setFragmentText(countryViewModel.countryLive.value!!)
 
+        buttonConfirmEditCountry.setOnClickListener {
+
+        }
+
+        buttonCancelEditCountry.setOnClickListener {
+            activity!!.supportFragmentManager.beginTransaction().remove(this).commit()
+        }
+
         super.onViewCreated(view, savedInstanceState)
     }
 
