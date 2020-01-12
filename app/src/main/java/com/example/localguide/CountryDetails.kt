@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
 import com.android.volley.Response
@@ -15,13 +17,23 @@ import org.json.JSONObject
 class CountryDetails : AppCompatActivity() {
     lateinit var country: Country
     private val manager = supportFragmentManager
+    lateinit var countryViewModel: CountryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_details)
 
+        //Intent
         getOneCountry("Singapore")
 
+        //LiveData View Model
+        countryViewModel = ViewModelProviders.of(this).get(CountryViewModel:: class.java)
+        val countryObserver = Observer<Country> { newCountry ->
+            setCountryText(newCountry)
+        }
+        countryViewModel.countryLive.observe(this, countryObserver)
+
+        //Button listeners
         imageViewEdit.setOnClickListener {
             makeInvisible()
             val transaction = manager.beginTransaction()
@@ -29,10 +41,10 @@ class CountryDetails : AppCompatActivity() {
             transaction.replace(R.id.country_container, fragment)
             transaction.commit()
         }
-
         imageViewBack.setOnClickListener {
             finish()
         }
+
     }
 
     private fun getOneCountry(country_name: String) {
@@ -54,10 +66,9 @@ class CountryDetails : AppCompatActivity() {
                             jsonResponse.getString("language"),
                             jsonResponse.getString("religion")
                         )
-                        if (country != null) {
-                            setCountryText()
-                            makeVisible()
-                        }
+
+                        setCountryText(country)
+                        makeVisible()
                     }
                 } catch (e: Exception) {
                     Log.d("Volley", "Response: %s".format(e.message.toString()))
@@ -114,7 +125,7 @@ class CountryDetails : AppCompatActivity() {
         imageViewBack.visibility = View.INVISIBLE
     }
 
-    private fun setCountryText() {
+    private fun setCountryText(country: Country) {
         textViewCountry.text = country.name
         textViewAbout.text = country.description
         textViewEthnicity.text = country.ethnicity
