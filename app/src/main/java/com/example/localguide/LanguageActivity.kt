@@ -28,23 +28,20 @@ class LanguageActivity : AppCompatActivity() {
         }
     }
     private fun showChangeLang() {
-        val listItmes = arrayOf("Chinese","Malay","English")
+        val listItmes = arrayOf("English","Chinese")
 
         val mBuilder = AlertDialog.Builder(this@LanguageActivity)
         mBuilder.setTitle("Choose Language")
         mBuilder.setSingleChoiceItems(listItmes, -1)  { dialog, which->
             if(which==0){
-                setLocate("ms")
+                setLocate("en")
                 recreate()
             }
             else if(which==1){
                 setLocate("zh")
                 recreate()
             }
-            else if ( which == 2){
-                setLocate("en")
-                recreate()
-            }
+
             dialog.dismiss()
         }
         val mDialog = mBuilder.create()
