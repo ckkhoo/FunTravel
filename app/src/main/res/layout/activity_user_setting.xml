@@ -26,7 +26,7 @@
         android:layout_marginEnd="16dp"
         android:text="@string/name"
         android:textColor="@android:color/black"
-        android:textSize="30sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
@@ -41,7 +41,7 @@
         android:layout_marginEnd="8dp"
         android:text="@string/email"
         android:textColor="@android:color/black"
-        android:textSize="30sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageViewUser"
@@ -64,22 +64,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
     <TextView
-        android:id="@+id/textViewFavourite"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        android:text="@string/favaourite"
-        android:textColor="@android:color/black"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEditProfile" />
-
-    <TextView
         android:id="@+id/textViewFavourite2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -93,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFavourite" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditProfile" />
 
     <TextView
         android:id="@+id/textViewSignOut"
@@ -112,23 +96,24 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewFavourite2" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btm_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btm_nav"
             android:layout_alignParentBottom="true"
             app:itemBackground="@color/colorBackground"
-            app:menu="@menu/menu_nav"/>
+            app:menu="@menu/menu_nav" />
 
         <FrameLayout
+            android:id="@+id/frame_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/frame_layout"
             android:layout_above="@+id/btm_nav">
 
         </FrameLayout>

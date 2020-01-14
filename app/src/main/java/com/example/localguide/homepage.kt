@@ -31,7 +31,7 @@ class homepage : AppCompatActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener {item->
             when(item.itemId){
                 R.id.home->{
-                    startActivity(Intent(this@homepage, User_Management::class.java))
+                    startActivity(Intent(this@homepage, homepage::class.java))
                 }
                 R.id.profile->{
                     startActivity(Intent(this@homepage,UserSetting::class.java))

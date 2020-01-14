@@ -16,13 +16,7 @@
             android:name=".UserSetting"
             android:exported="true" />
         <activity android:name=".User_Management" />
-        <activity android:name=".MainActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".homepage" />
         <activity android:name=".CountryDetails" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegisterGuideActivity" />
@@ -34,7 +28,13 @@
         <activity
             android:name=".SettingActivity"
             android:label="Setting" />
-        <activity android:name=".homepage"/>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

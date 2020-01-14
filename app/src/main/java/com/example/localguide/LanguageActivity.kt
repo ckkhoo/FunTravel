@@ -14,12 +14,12 @@ class LanguageActivity : AppCompatActivity() {
     lateinit var mBtn : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        loadLocate()
+
         setContentView(R.layout.activity_language)
+        loadLocate()
 
-
-        val actionBar = supportActionBar
-        actionBar!!.title=resources.getString(R.string.app_name)
+        //val actionBar = supportActionBar
+        //actionBar!!.title=resources.getString(R.string.app_name)
 
         mBtn= findViewById(R.id.mChangeLang)
         mBtn.setOnClickListener {
@@ -33,6 +33,8 @@ class LanguageActivity : AppCompatActivity() {
         val mBuilder = AlertDialog.Builder(this@LanguageActivity)
         mBuilder.setTitle("Choose Language")
         mBuilder.setSingleChoiceItems(listItmes, -1)  { dialog, which->
+
+
             if(which==0){
                 setLocate("en")
                 recreate()

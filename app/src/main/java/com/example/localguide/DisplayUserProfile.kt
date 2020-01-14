@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.activity_display_user_profile.*
 
 class DisplayUserProfile : AppCompatActivity() {
 
-    private lateinit var databaseRef: DatabaseReference
     private lateinit var sharedPreferencesUID : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,32 +18,18 @@ class DisplayUserProfile : AppCompatActivity() {
         setContentView(R.layout.activity_display_user_profile)
 
         sharedPreferencesUID = getSharedPreferences(getString(R.string.pref_file_name), Context.MODE_PRIVATE)
-        val userID = sharedPreferencesUID.getString(getString(R.string.userID), getString(R.string.default_UserID))?:return
+        val userID = sharedPreferencesUID.getString(getString(R.string.userID_stored), getString(R.string.default_value))?:return
+        val email = sharedPreferencesUID.getString(getString(R.string.email_stored), getString(R.string.default_value))?:return
+        val name = sharedPreferencesUID.getString(getString(R.string.name_stored), getString(R.string.default_value))?:return
+        val role = sharedPreferencesUID.getString(getString(R.string.role_stored), getString(R.string.default_value))?:return
+        val image = sharedPreferencesUID.getString(getString(R.string.image_stored), getString(R.string.default_value))?:return
 
-        databaseRef = FirebaseDatabase.getInstance().getReference("User")
+        textViewUserName.text = String.format("Name  : %s",  name)
+        textView2.text = String.format("Email  : %s",  email)
+        textView3.text = String.format("Role  : %s",  role)
+        textView4.text = String.format("User ID  : %s",  userID)
+        textView5.text = String.format("Image  : %s",  image)
 
-        databaseRef.addValueEventListener(object : ValueEventListener {
 
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-                if(dataSnapshot?.exists()) {
-                    //val user = dataSnapshot.child(uid).getValue()
-                    //textViewUserName.text = sharedPreferencesUID.getString("userID", "")
-                    for(u: DataSnapshot in dataSnapshot.children.iterator()) {
-                        if(u.key!!.equals(userID)) {
-                            textViewUserName.text = String.format("Name  : %s",  u.child("name").getValue())
-                            return
-                        }
-                    }
-                }
-                else {
-                    Toast.makeText(applicationContext,"Sorry, record not found", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(applicationContext,"Sorry, record not found", Toast.LENGTH_SHORT).show()
-            }
-        })
     }
 }
