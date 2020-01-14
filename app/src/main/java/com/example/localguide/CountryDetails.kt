@@ -26,30 +26,10 @@ class CountryDetails : AppCompatActivity() {
         //LiveData View Model
         countryViewModel = ViewModelProviders.of(this).get(CountryViewModel:: class.java)
 
-        //Button listeners
-        imageViewEdit.setOnClickListener {
-            //Fire observer
-            val countryObserver = Observer<Country> { newCountry ->
-                setCountryText(newCountry)
-                setOneCountry(newCountry)
-            }
-            countryViewModel.countryLive.observe(this, countryObserver)
-
-            val transaction = manager.beginTransaction()
-            val fragment = EditCountryFragment()
-            transaction.replace(R.id.countrydetails_big_container, fragment)
-            transaction.commit()
-        }
-        imageViewBack.setOnClickListener {
-            finish()
-        }
-
         //Intent
-//        val intent = getIntent()
-//        val passedName = intent.getStringExtra("name")
-//        getOneCountry(passedName)
-
-        getOneCountry("London")
+        val intent = getIntent()
+        val passedName = intent.getStringExtra("name")
+        getOneCountry(passedName)
     }
 
     private fun getOneCountry(country_name: String) {
@@ -169,6 +149,24 @@ class CountryDetails : AppCompatActivity() {
         textViewReligion.visibility = View.VISIBLE
         imageViewBack.visibility = View.VISIBLE
         imageViewEdit.visibility = View.VISIBLE
+
+        //Button listeners
+        imageViewEdit.setOnClickListener {
+            //Fire observer
+            val countryObserver = Observer<Country> { newCountry ->
+                setCountryText(newCountry)
+                setOneCountry(newCountry)
+            }
+            countryViewModel.countryLive.observe(this, countryObserver)
+
+            val transaction = manager.beginTransaction()
+            val fragment = EditCountryFragment()
+            transaction.replace(R.id.countrydetails_big_container, fragment)
+            transaction.commit()
+        }
+        imageViewBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun setCountryText(country: Country) {
