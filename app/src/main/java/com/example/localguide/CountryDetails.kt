@@ -14,23 +14,20 @@ import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_country_details.*
 import org.json.JSONObject
 
-
-class CountryDetails : AppCompatActivity() {
+class CountryDetails : AppCompatActivity(), LoadingImplementation {
     lateinit var country: Country
     private val manager = supportFragmentManager
     lateinit var countryViewModel: CountryViewModel
+    private lateinit var loadingAnimation: LoadingAnimation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_details)
 
-        //Intent
-        val intent = getIntent()
-        val passedName = intent.getStringExtra("name")
-        getOneCountry(passedName)
-
         //LiveData View Model
         countryViewModel = ViewModelProviders.of(this).get(CountryViewModel:: class.java)
+
+        imageViewEdit.visibility = View.VISIBLE
 
         //Button listeners
         imageViewEdit.setOnClickListener {
@@ -43,13 +40,26 @@ class CountryDetails : AppCompatActivity() {
 
             val transaction = manager.beginTransaction()
             val fragment = EditCountryFragment()
-            transaction.replace(R.id.country_container, fragment)
+            transaction.replace(R.id.countrydetails_big_container, fragment)
             transaction.commit()
         }
         imageViewBack.setOnClickListener {
             finish()
         }
 
+//        loadingAnimation =
+//            LoadingAnimation(
+//                this,
+//                "loading.json"
+//            )
+//        loadingAnimation.playAnimation(true)
+
+        //Intent
+//        val intent = getIntent()
+//        val passedName = intent.getStringExtra("name")
+//        getOneCountry(passedName)
+
+        getOneCountry("London")
     }
 
     private fun getOneCountry(country_name: String) {
@@ -71,6 +81,8 @@ class CountryDetails : AppCompatActivity() {
                             jsonResponse.getString("language"),
                             jsonResponse.getString("religion")
                         )
+
+//                        loadingAnimation.stopAnimation(R.layout.activity_country_details)
 
                         setCountryText(country)
                         countryViewModel.countryLive.value = country
@@ -157,7 +169,6 @@ class CountryDetails : AppCompatActivity() {
         textViewLanguage.visibility = View.VISIBLE
         textViewReligionTitle.visibility = View.VISIBLE
         textViewReligion.visibility = View.VISIBLE
-        imageViewEdit.visibility = View.VISIBLE
         imageViewBack.visibility = View.VISIBLE
     }
 
@@ -184,6 +195,11 @@ class CountryDetails : AppCompatActivity() {
         textViewEtiquette.text = country.etiquette
         textViewLanguage.text = country.language
         textViewReligion.text = country.religion
+    }
+
+    override fun onFinishedLoading() {
+        //After loading is done, stop the animation and reset the current view
+        loadingAnimation.stopAnimation(R.layout.activity_country_details)
     }
 }
 
