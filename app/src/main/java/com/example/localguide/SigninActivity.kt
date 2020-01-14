@@ -117,7 +117,7 @@ class SigninActivity : AppCompatActivity() {
 
                     } else {
                         progressDialog.dismiss()
-                        Toast.makeText(applicationContext, "Sorry, email or password incorrect", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "Sorry, email or password incorrect. Please type again", Toast.LENGTH_SHORT).show()
                     }
 
                 }
