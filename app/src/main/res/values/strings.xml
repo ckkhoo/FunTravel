@@ -74,4 +74,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="favourite_country_guide">Favourite Country Guide</string>
+    <string name="china">China</string>
+    <string name="london">London</string>
+    <string name="country_guide_cultre">Country Guide Culture</string>
+    <string name="thailand">Thailand</string>
+    <string name="singapore">Singapore</string>
 </resources>

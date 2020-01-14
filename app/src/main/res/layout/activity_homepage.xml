@@ -7,193 +7,235 @@
     tools:context=".homepage">
 
     <ImageView
-        android:id="@+id/imageView20"
+        android:id="@+id/imageViewTitle"
         android:layout_width="315dp"
         android:layout_height="128dp"
         android:layout_marginTop="16dp"
+        android:background="#412C15"
+        android:contentDescription="@string/malaysia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/malaysia"
+        tools:srcCompat="@drawable/malaysia" />
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="355dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:id="@+id/textViewcountry"
+        android:layout_width="333dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:background="@android:color/black"
+        android:fontFamily="sans-serif"
         android:gravity="center"
-        android:text="Country Culture Guide"
-        android:textSize="18sp"
+        android:text="@string/country_guide_cultre"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTitle" />
 
     <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView22"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView22"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:id="@+id/imageViewChina"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView23"
-        app:layout_constraintStart_toEndOf="@+id/imageView21"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:background="#FF5607"
+        android:clickable="true"
+        android:contentDescription="@string/china"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewMalaysia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewcountry"
+        app:srcCompat="@drawable/china"
+        tools:srcCompat="@drawable/china" />
 
     <ImageView
-        android:id="@+id/imageView23"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
-        android:layout_marginStart="8dp"
+        android:id="@+id/imageViewMalaysia"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="8dp"
+        android:background="#FFD600"
+        android:clickable="true"
+        android:contentDescription="@string/malaysia"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewLondon"
+        app:layout_constraintStart_toEndOf="@+id/imageViewChina"
+        app:layout_constraintTop_toBottomOf="@+id/textViewcountry"
+        app:srcCompat="@drawable/my"
+        tools:srcCompat="@drawable/my" />
+
+    <ImageView
+        android:id="@+id/imageViewLondon"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="#AEEA00"
+        android:clickable="true"
+        android:contentDescription="@string/london"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/imageView22"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintStart_toEndOf="@+id/imageViewMalaysia"
+        app:layout_constraintTop_toBottomOf="@+id/textViewcountry"
+        app:srcCompat="@drawable/london"
+        tools:srcCompat="@drawable/london" />
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="314dp"
-        android:layout_height="43dp"
+        android:id="@+id/textViewFavourite"
+        android:layout_width="310dp"
+        android:layout_height="47dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
+        android:background="@android:color/black"
+        android:fontFamily="sans-serif"
         android:foregroundGravity="fill_horizontal"
-        android:gravity="start|fill"
-        android:text="Favourite Country Guide"
+        android:gravity="center|start|fill|fill_horizontal"
+        android:text="@string/favourite_country_guide"
+        android:textAlignment="inherit"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewMalaysia" />
 
     <ImageView
-        android:id="@+id/imageView24"
-        android:layout_width="170dp"
-        android:layout_height="130dp"
+        android:id="@+id/imageViewThailand"
+        android:layout_width="147dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:background="#0091EA"
+        android:clickable="true"
+        android:contentDescription="@string/thailand"
+        app:layout_constraintBottom_toTopOf="@+id/textViewThailand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFavourite"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/thailand"
+        tools:srcCompat="@drawable/thailand" />
+
+    <ImageView
+        android:id="@+id/imageViewSingapore"
+        android:layout_width="133dp"
+        android:layout_height="111dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView25"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.0"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView25"
-        android:layout_width="170dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FF00E5"
+        android:clickable="true"
+        android:contentDescription="@string/singapore"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSinagpore"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.007"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toEndOf="@+id/imageViewThailand"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFavourite"
+        app:layout_constraintVertical_bias="0.944"
+        app:srcCompat="@drawable/singapore"
+        tools:srcCompat="@drawable/singapore" />
 
     <TextView
         android:id="@+id/textViewChina"
-        android:layout_width="115dp"
+        android:layout_width="112dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
+        android:background="#E2410F"
         android:gravity="center"
-        android:text="China"
-        app:layout_constraintEnd_toEndOf="@+id/imageView21"
+        android:text="@string/china"
+        android:textColor="#FCFCFC"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewChina"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView21"
-        app:layout_constraintTop_toBottomOf="@+id/imageView21" />
+        app:layout_constraintStart_toStartOf="@+id/imageViewChina"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewChina" />
 
     <TextView
-        android:id="@+id/textView13"
-        android:layout_width="115dp"
+        android:id="@+id/textViewMalaysia"
+        android:layout_width="112dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
+        android:background="#F5C000"
         android:gravity="center"
-        android:text="Malaysia"
-        app:layout_constraintEnd_toEndOf="@+id/imageView22"
+        android:text="@string/malaysia"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewMalaysia"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView22"
-        app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+        app:layout_constraintStart_toStartOf="@+id/imageViewMalaysia"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMalaysia" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="115dp"
+        android:id="@+id/textViewLondon"
+        android:layout_width="112dp"
         android:layout_height="40dp"
+        android:background="#00C853"
         android:gravity="center"
-        android:text="England"
-        app:layout_constraintEnd_toEndOf="@+id/imageView23"
+        android:text="@string/london"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewLondon"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView23"
-        app:layout_constraintTop_toBottomOf="@+id/imageView23" />
+        app:layout_constraintStart_toStartOf="@+id/imageViewLondon"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewLondon" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="170dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="24dp"
+        android:id="@+id/textViewThailand"
+        android:layout_width="147dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="76dp"
+        android:background="#2962FF"
         android:gravity="center"
-        android:text="Thailand"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView24" />
+        android:text="@string/thailand"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textViewSinagpore"
-        android:layout_width="170dp"
-        android:layout_height="30dp"
+        android:layout_width="133dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
+        android:layout_marginBottom="76dp"
+        android:background="#9F4AC3"
         android:gravity="center"
-        android:text="Singapore"
+        android:text="@string/singapore"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toEndOf="@+id/textViewThailand"></TextView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <android.support.design.widget.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/btm_nav"
-            android:layout_alignParentBottom="true"
-            app:itemBackground="@color/colorBackground"
-            app:menu="@menu/menu_nav"/>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/frame_layout"
-            android:layout_above="@+id/btm_nav">
-
-        </FrameLayout>
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
 
 
-    </RelativeLayout>
+<!--        <android.support.design.widget.BottomNavigationView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/btm_nav"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            app:itemBackground="@color/colorBackground"-->
+<!--            app:menu="@menu/menu_nav"/>-->
+
+<!--        <FrameLayout-->
+<!--            android:id="@+id/frame_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_above="@+id/btm_nav"-->
+<!--            android:layout_marginBottom="19dp">-->
+
+<!--        </FrameLayout>-->
+
+
+<!--    </RelativeLayout>-->
 
 
 
