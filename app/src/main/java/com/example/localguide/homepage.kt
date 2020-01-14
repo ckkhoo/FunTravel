@@ -27,19 +27,19 @@ class homepage : AppCompatActivity() {
         countryList = ArrayList<Country>()
         getAllCountry()
         onItemClick()
-//        val bottomNavigation : BottomNavigationView = findViewById(R.id.btm_nav)
-//        bottomNavigation.setOnNavigationItemSelectedListener {item->
-//            when(item.itemId){
-//                R.id.home->{
-//                    startActivity(Intent(this@homepage, User_Management::class.java))
-//                }
-//                R.id.profile->{
-//                    startActivity(Intent(this@homepage, homepage::class.java))
-//                }
-//
-//            }
-//            true
-//        }
+        val bottomNavigation : BottomNavigationView = findViewById(R.id.btm_nav)
+        bottomNavigation.setOnNavigationItemSelectedListener {item->
+            when(item.itemId){
+                R.id.home->{
+                    startActivity(Intent(this@homepage, User_Management::class.java))
+                }
+                R.id.profile->{
+                    startActivity(Intent(this@homepage,UserSetting::class.java))
+                }
+
+            }
+            true
+        }
     }
     private fun onItemClick(){
 
