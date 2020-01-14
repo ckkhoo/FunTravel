@@ -43,7 +43,7 @@ class SigninActivity : AppCompatActivity() {
     fun signInAcount() {
         val email = editTextEmail.text.toString().trim()
         val password = editTextPassword.text.toString()
-        val intent = Intent(this, DisplayUserProfile::class.java)
+        val intent = Intent(this, homepage::class.java)
 
         val progressDialog = ProgressDialog(this)
         progressDialog.setMessage("Signing In...")

@@ -16,7 +16,7 @@
             android:name=".UserSetting"
             android:exported="true" />
         <activity android:name=".User_Management" />
-        <activity android:name=".homepage"/>
+        <activity android:name=".homepage" />
         <activity android:name=".CountryDetails" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegisterGuideActivity" />

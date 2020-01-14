@@ -14,7 +14,6 @@ import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_country_details.*
 import org.json.JSONObject
 
-
 class CountryDetails : AppCompatActivity() {
     lateinit var country: Country
     private val manager = supportFragmentManager
@@ -24,35 +23,24 @@ class CountryDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_details)
 
+        //LiveData View Model
+        countryViewModel = ViewModelProviders.of(this).get(CountryViewModel:: class.java)
+
         //Intent
         val intent = getIntent()
         val passedName = intent.getStringExtra("name")
         getOneCountry(passedName)
-
-        //LiveData View Model
-        countryViewModel = ViewModelProviders.of(this).get(CountryViewModel:: class.java)
-
-        //Button listeners
-        imageViewEdit.setOnClickListener {
-            //Fire observer
-            val countryObserver = Observer<Country> { newCountry ->
-                setCountryText(newCountry)
-                setOneCountry(newCountry)
-            }
-            countryViewModel.countryLive.observe(this, countryObserver)
-
-            val transaction = manager.beginTransaction()
-            val fragment = EditCountryFragment()
-            transaction.replace(R.id.country_container, fragment)
-            transaction.commit()
-        }
-        imageViewBack.setOnClickListener {
-            finish()
-        }
-
     }
 
     private fun getOneCountry(country_name: String) {
+
+        var loadingAnimation =
+            LoadingAnimation(
+                this,
+                "loading.json"
+            )
+        loadingAnimation.playAnimation(true)
+
         val url = getString(R.string.url_server) + getString(R.string.url_read_one_country) + "?name=" + country_name
 
         val jsonObjectRequest = JsonObjectRequest(
@@ -71,6 +59,8 @@ class CountryDetails : AppCompatActivity() {
                             jsonResponse.getString("language"),
                             jsonResponse.getString("religion")
                         )
+
+                        loadingAnimation.stopAnimation(R.layout.activity_country_details)
 
                         setCountryText(country)
                         countryViewModel.countryLive.value = country
@@ -157,24 +147,26 @@ class CountryDetails : AppCompatActivity() {
         textViewLanguage.visibility = View.VISIBLE
         textViewReligionTitle.visibility = View.VISIBLE
         textViewReligion.visibility = View.VISIBLE
-        imageViewEdit.visibility = View.VISIBLE
         imageViewBack.visibility = View.VISIBLE
-    }
+        imageViewEdit.visibility = View.VISIBLE
 
-    private fun makeInvisible() {
-        textViewCountry.visibility = View.INVISIBLE
-        textViewAboutTitle.visibility = View.INVISIBLE
-        textViewAbout.visibility = View.INVISIBLE
-        textViewEthnicityTitle.visibility = View.INVISIBLE
-        textViewEthnicity.visibility = View.INVISIBLE
-        textViewEtiquetteTitle.visibility = View.INVISIBLE
-        textViewEtiquette.visibility = View.INVISIBLE
-        textViewLanguageTitle.visibility = View.INVISIBLE
-        textViewLanguage.visibility = View.INVISIBLE
-        textViewReligionTitle.visibility = View.INVISIBLE
-        textViewReligion.visibility = View.INVISIBLE
-        imageViewEdit.visibility = View.INVISIBLE
-        imageViewBack.visibility = View.INVISIBLE
+        //Button listeners
+        imageViewEdit.setOnClickListener {
+            //Fire observer
+            val countryObserver = Observer<Country> { newCountry ->
+                setCountryText(newCountry)
+                setOneCountry(newCountry)
+            }
+            countryViewModel.countryLive.observe(this, countryObserver)
+
+            val transaction = manager.beginTransaction()
+            val fragment = EditCountryFragment()
+            transaction.replace(R.id.countrydetails_big_container, fragment)
+            transaction.commit()
+        }
+        imageViewBack.setOnClickListener {
+            finish()
+        }
     }
 
     private fun setCountryText(country: Country) {
