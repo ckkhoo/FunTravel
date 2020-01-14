@@ -1,5 +1,7 @@
 package com.example.localguide
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -148,24 +150,30 @@ class CountryDetails : AppCompatActivity() {
         textViewReligionTitle.visibility = View.VISIBLE
         textViewReligion.visibility = View.VISIBLE
         imageViewBack.visibility = View.VISIBLE
-        imageViewEdit.visibility = View.VISIBLE
 
-        //Button listeners
-        imageViewEdit.setOnClickListener {
-            //Fire observer
-            val countryObserver = Observer<Country> { newCountry ->
-                setCountryText(newCountry)
-                setOneCountry(newCountry)
-            }
-            countryViewModel.countryLive.observe(this, countryObserver)
-
-            val transaction = manager.beginTransaction()
-            val fragment = EditCountryFragment()
-            transaction.replace(R.id.countrydetails_big_container, fragment)
-            transaction.commit()
-        }
         imageViewBack.setOnClickListener {
             finish()
+        }
+
+        var sharedPreferencesUID: SharedPreferences = getSharedPreferences(getString(R.string.pref_file_name), Context.MODE_PRIVATE)
+        val role = sharedPreferencesUID.getString(getString(R.string.role_stored), getString(R.string.default_value))?:return
+        if (role == "Guide") {
+            imageViewEdit.visibility = View.VISIBLE
+
+            //Button listeners
+            imageViewEdit.setOnClickListener {
+                //Fire observer
+                val countryObserver = Observer<Country> { newCountry ->
+                    setCountryText(newCountry)
+                    setOneCountry(newCountry)
+                }
+                countryViewModel.countryLive.observe(this, countryObserver)
+
+                val transaction = manager.beginTransaction()
+                val fragment = EditCountryFragment()
+                transaction.replace(R.id.countrydetails_big_container, fragment)
+                transaction.commit()
+            }
         }
     }
 
